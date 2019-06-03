@@ -1,3 +1,43 @@
-.App {
-  text-align: center;
+.header {
+  border: 1px solid black;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#userHeaderBox {
+}
+
+#headerMain {
+  display: flex;
+}
+
+.header h2 {
+  margin: 1em;
+}
+
+.greyBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.logInBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  top: 30%;
+  bottom: 30%;
+  background: white;
+}
+
+input {
+  height: 4em;
 }

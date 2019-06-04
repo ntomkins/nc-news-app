@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class LogInBox extends Component {
-  state = {};
+  state = { usernameInput: '' };
   render() {
     return (
       <div className='greyBackground'>
@@ -15,7 +16,12 @@ class LogInBox extends Component {
           <form className='logInForm'>
             <label>
               Log In:
-              <input type='text' name='username' placeholder='Username' />
+              <input
+                onChange={this.handleInput}
+                type='text'
+                name='username'
+                placeholder='Username'
+              />
             </label>
             <input onClick={this.handleSubmit} type='submit' value='Log In' />
           </form>
@@ -23,8 +29,23 @@ class LogInBox extends Component {
       </div>
     );
   }
+  handleInput = e => {
+    this.setState({ usernameInput: e.target.value });
+  };
+
   handleSubmit = e => {
     e.preventDefault();
+    this.getUsernames(e).then(username =>
+      this.props.updateLoggedInUser(username)
+    );
+  };
+
+  getUsernames = e => {
+    const baseUrl = 'https://ntomkins-nc-news-app.herokuapp.com';
+    const url = baseUrl + '/api/users/' + this.state.usernameInput;
+    return axios.get(url).then(({ data: { user } }) => {
+      return user;
+    });
   };
 }
 

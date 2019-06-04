@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Router } from '@reach/router';
 import Header from './components/Header';
 import LogInBox from './components/LogInBox';
+import Articles from './components/Articles';
 
 class App extends Component {
   state = { loggedInUser: null, loginPopup: false };
@@ -12,6 +13,7 @@ class App extends Component {
       <div className='App'>
         <Header
           loggedInUser={this.state.loggedInUser}
+          updateLoggedInUser={this.updateLoggedInUser}
           toggleLoginPopup={this.toggleLoginPopup}
         />
         <div>
@@ -22,9 +24,9 @@ class App extends Component {
             />
           )}
         </div>
-        {/* <Router>
-          <div />
-        </Router> */}
+        <Router>
+          <Articles path='/articles' />
+        </Router>
       </div>
     );
   }
@@ -32,8 +34,8 @@ class App extends Component {
     this.setState({ loginPopup: bool });
   };
 
-  updateLoggedInUser = username => {
-    this.setState({ loggedInUser: username });
+  updateLoggedInUser = user => {
+    this.setState({ loggedInUser: user, loginPopup: false });
   };
 }
 

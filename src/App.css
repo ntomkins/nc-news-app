@@ -1,19 +1,31 @@
 .header {
-  border: 1px solid black;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
+  padding: 1em;
 }
 
-#userHeaderBox {
+.userHeaderBox img {
+  margin: 1em;
+  height: 3em;
+  width: 3em;
+  border: 0.1em solid black;
+}
+
+.userHeaderBox {
+  display: flex;
 }
 
 #headerMain {
   display: flex;
 }
 
-.header h2 {
-  margin: 1em;
+.logInOutButton {
+  display: flex;
+  border: 0.1em solid black;
+  border-radius: 0.5em;
+  padding: 0.2em;
 }
 
 .greyBackground {
@@ -26,18 +38,22 @@
 }
 
 .logInBox {
+  display: flex;
+  flex-wrap: wrap;
   font-size: 1em;
   border: 0.1em solid black;
   border-radius: 1em;
   position: absolute;
-  left: 30%;
-  right: 30%;
+  left: 20%;
+  right: 20%;
   top: 30%;
   bottom: 30%;
   background: white;
 }
 #closeLoginButton {
   text-align: right;
+  display: flex;
+  justify-content: flex-end;
   color: red;
   margin-right: 1em;
 }

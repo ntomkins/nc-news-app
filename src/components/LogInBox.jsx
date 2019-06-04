@@ -13,7 +13,7 @@ class LogInBox extends Component {
           >
             x
           </h1>
-          <form className='logInForm'>
+          <form onSubmit={this.handleSubmit} className='logInForm'>
             <label>
               Log In:
               <input
@@ -23,7 +23,7 @@ class LogInBox extends Component {
                 placeholder='Username'
               />
             </label>
-            <input onClick={this.handleSubmit} type='submit' value='Log In' />
+            <input type='submit' value='Log In' />
           </form>
         </div>
       </div>

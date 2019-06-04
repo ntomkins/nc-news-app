@@ -1,6 +1,7 @@
 .header {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
   padding: 1em;
@@ -15,10 +16,6 @@
 }
 
 .userHeaderBox {
-  display: flex;
-}
-
-#headerMain {
   display: flex;
 }
 
@@ -82,8 +79,30 @@ input {
 .articleCard {
   display: flex;
   border: 0.1em solid black;
+  margin: 3em;
+  border-radius: 0.5em;
 }
 
 .votes {
+  display: flex;
+  align-content: flex-start;
+  flex-direction: column;
   padding: 1em;
+  margin-right: 2em;
+  background-color: lightgray;
+}
+
+.topicBar {
+  margin: 0 auto;
+  font-size: 1.5em;
+  display: flex;
+  list-style: none;
+  border: 0.1em solid black;
+}
+
+.topicBar li {
+  padding: 1em;
+}
+.topicBar :hover {
+  background-color: rgb(187, 92, 80);
 }

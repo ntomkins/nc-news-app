@@ -6,17 +6,26 @@ class LogInBox extends Component {
     return (
       <div className='greyBackground'>
         <div className='logInBox'>
-          <form>
+          <h1
+            onClick={() => this.props.toggleLoginPopup(false)}
+            id='closeLoginButton'
+          >
+            x
+          </h1>
+          <form className='logInForm'>
             <label>
               Log In:
               <input type='text' name='username' placeholder='Username' />
             </label>
-            <input type='submit' value='Log In' />
+            <input onClick={this.handleSubmit} type='submit' value='Log In' />
           </form>
         </div>
       </div>
     );
   }
+  handleSubmit = e => {
+    e.preventDefault();
+  };
 }
 
 export default LogInBox;

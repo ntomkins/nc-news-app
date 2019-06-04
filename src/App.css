@@ -26,16 +26,36 @@
 }
 
 .logInBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3em;
+  font-size: 1em;
+  border: 0.1em solid black;
+  border-radius: 1em;
   position: absolute;
   left: 30%;
   right: 30%;
   top: 30%;
   bottom: 30%;
   background: white;
+}
+#closeLoginButton {
+  text-align: right;
+  color: red;
+  margin-right: 1em;
+}
+
+.logInBox input {
+  font-size: 1em;
+  height: 1em;
+}
+
+.logInBox button {
+  margin: 1em;
+}
+
+.logInForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
 }
 
 input {

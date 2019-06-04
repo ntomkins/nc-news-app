@@ -4,6 +4,7 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: 1em;
+  margin: 0 auto;
 }
 
 .userHeaderBox img {
@@ -23,7 +24,7 @@
 
 .logInOutButton {
   display: flex;
-  border: 0.1em solid black;
+  border: 0.1em solid red;
   border-radius: 0.5em;
   padding: 0.2em;
 }
@@ -44,8 +45,8 @@
   border: 0.1em solid black;
   border-radius: 1em;
   position: absolute;
-  left: 20%;
-  right: 20%;
+  left: 30%;
+  right: 30%;
   top: 30%;
   bottom: 30%;
   background: white;
@@ -76,4 +77,13 @@
 
 input {
   height: 4em;
+}
+
+.articleCard {
+  display: flex;
+  border: 0.1em solid black;
+}
+
+.votes {
+  padding: 1em;
 }

@@ -5,9 +5,11 @@ const Header = props => {
     <div className='header'>
       <div id='headerMain'>
         <h2>logo here</h2>
-        <h2>current topic here</h2>
+        <h2>current topic</h2>
       </div>
-      <h1>NC NEWS</h1>
+      <h1>
+        <span style={{ color: 'red' }}>N</span>C NEWS
+      </h1>
       <div>
         {props.loggedInUser ? (
           <div class='userHeaderBox'>

@@ -3,27 +3,46 @@ import { fetchArticles } from './axios';
 import ArticleList from './ArticleList';
 
 class Articles extends Component {
-  state = { articles: [] };
+  state = { articles: [], sortby: null };
 
   componentDidMount() {
     const { topic, author } = this.props;
+    const { sort_by } = this.state;
     fetchArticles({ topic, author }).then(articles =>
-      this.setState({ articles })
+      this.setState({ articles, sort_by })
     );
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps !== this.props) {
+    if (prevProps !== this.props || prevState !== this.state) {
       const { topic, author } = this.props;
+      const { sort_by } = this.state;
       fetchArticles({ topic, author }).then(articles =>
-        this.setState({ articles })
+        this.setState({ articles, sort_by })
       );
     }
   }
 
   render() {
-    return <ArticleList articles={this.state.articles} />;
+    return (
+      <>
+        <div className='sortBar'>
+          <h3 onClick={() => this.changeSort('created_at')}>newest</h3>
+          {/* <h3 onClick={() => this.changeSort()}>top</h3> */}
+          <h3 onClick={() => this.changeSort('votes')}>highest rated</h3>
+          <h3 onClick={() => this.changeSort('comment_count')}>
+            most comments
+          </h3>
+        </div>
+        <ArticleList articles={this.state.articles} />
+      </>
+    );
   }
+
+  changeSort = sort_by => {
+    console.log(sort_by);
+    this.setState({ sort_by });
+  };
 }
 
 export default Articles;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from '@reach/router';
 
 const ArticleCard = props => {
@@ -6,9 +6,9 @@ const ArticleCard = props => {
   return (
     <li className='articleCard'>
       <div className='votes'>
-        <h4>↑</h4>
+        <h4 className='voteArrow'>↑</h4>
         <h3>{article.votes}</h3>
-        <h4>↓</h4>
+        <h4 className='voteArrow'>↓</h4>
       </div>
       <Link to={`/article/${article.article_id}`}>
         <div className='ArticleCardContent'>

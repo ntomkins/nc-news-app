@@ -14,3 +14,10 @@ export const fetchArticleById = article_id => {
     return article;
   });
 };
+
+export const fetchCommentsbyArticleId = article_id => {
+  const url = `${baseUrl}/api/articles/${article_id}/comments`;
+  return axios.get(url).then(({ data: { comments } }) => {
+    return comments;
+  });
+};

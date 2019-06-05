@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
 
-const ArticleList = props => {
+const ArticleCard = props => {
   const { article } = props;
   return (
     <li className='articleCard'>
@@ -24,4 +24,4 @@ const ArticleList = props => {
   );
 };
 
-export default ArticleList;
+export default ArticleCard;

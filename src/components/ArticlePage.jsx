@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { fetchArticleById } from './axios';
 import ArticleContent from './ArticleContent';
-// import Comments from './Comments';
+import ArticleComments from './ArticleComments';
 
 class ArticlePage extends Component {
   state = { article: null };
 
   componentDidMount() {
     fetchArticleById(this.props.article_id).then(article => {
-      console.log(article);
       return this.setState({ article });
     });
   }
@@ -20,7 +19,8 @@ class ArticlePage extends Component {
         {article && (
           <>
             <ArticleContent article={article} />
-            {/* <Comments /> */}
+            <h2 id='ArticleCommentsHeader'>Comments</h2>
+            <ArticleComments article_id={article.article_id} />
           </>
         )}
       </>

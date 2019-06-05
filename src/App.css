@@ -1,3 +1,7 @@
+li {
+  list-style: none;
+}
+
 .header {
   display: flex;
   flex-wrap: wrap;
@@ -112,7 +116,6 @@ input {
   margin: 0 auto;
   font-size: 1.5em;
   display: flex;
-  list-style: none;
   border: 0.1em solid black;
   margin-bottom: 3em;
 }
@@ -122,4 +125,20 @@ input {
 }
 .topicBar :hover {
   background-color: rgb(187, 92, 80);
+}
+
+#ArticleCommentsHeader {
+  padding-top: 3em;
+  padding-bottom: 1em;
+}
+
+.commentCard {
+  border-top: 0.1em solid rgba(58, 58, 58, 0.5);
+  display: flex;
+  align-content: center;
+}
+
+.commentVotes {
+  display: flex;
+  padding: 1em;
 }

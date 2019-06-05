@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const ArticleContent = props => {
   const { title, author, topic, body, votes, created_at } = props.article;

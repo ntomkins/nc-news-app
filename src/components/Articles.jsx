@@ -10,14 +10,11 @@ class Articles extends Component {
     fetchArticles({ topic, author }).then(articles =>
       this.setState({ articles })
     );
-    console.log(this.props);
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps !== this.props) {
       const { topic, author } = this.props;
-
-      console.log(this.props);
       fetchArticles({ topic, author }).then(articles =>
         this.setState({ articles })
       );

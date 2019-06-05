@@ -24,8 +24,10 @@ class App extends Component {
             />
           )}
         </div>
-        <Router>
-          <Articles path='/articles' />
+        <Router primary={false}>
+          <Articles path='/articles/*' />
+          <Articles path='/articles/topics/:topic' />
+          <Articles path='/articles/users/:username' />
         </Router>
       </div>
     );

@@ -6,7 +6,7 @@ const ArticleList = props => {
     <>
       {articles.map(article => {
         return (
-          <div className='articleCard'>
+          <div key={article.article_id} className='articleCard'>
             <div className='votes'>
               <h4>↑</h4>
               <h3>{article.votes}</h3>

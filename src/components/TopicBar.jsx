@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from '@reach/router';
 
 class TopicBar extends Component {
   state = { topics: [] };
@@ -16,9 +17,15 @@ class TopicBar extends Component {
     const { topics } = this.state;
     return (
       <ul className='topicBar'>
-        <li key='news'>news</li>
+        <Link to={`/articles`} key={'news'}>
+          <li key='news'>news</li>
+        </Link>
         {topics.map(topic => {
-          return <li key={topic.slug}>{topic.slug}</li>;
+          return (
+            <Link to={`/articles/topics/${topic.slug}`} key={topic.slug}>
+              <li key={topic.slug}>{topic.slug}</li>
+            </Link>
+          );
         })}
       </ul>
     );

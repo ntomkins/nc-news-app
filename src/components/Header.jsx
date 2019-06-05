@@ -14,7 +14,7 @@ const Header = props => {
         </h1>
         <div>
           {props.loggedInUser ? (
-            <div class='userHeaderBox'>
+            <div className='userHeaderBox'>
               <img src={props.loggedInUser.avatar_url} alt='user avatar' />
               <h2
                 onClick={e => props.updateLoggedInUser(null)}

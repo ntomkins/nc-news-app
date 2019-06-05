@@ -88,8 +88,24 @@ input {
   align-content: flex-start;
   flex-direction: column;
   padding: 1em;
-  margin-right: 2em;
   background-color: lightgray;
+}
+
+.ArticleCardContent {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  margin-left: 2em;
+}
+
+.articleCard a {
+  color: black;
+  text-decoration: none;
+}
+
+.articleCard a {
+  color: black;
+  text-decoration: none;
 }
 
 .topicBar {
@@ -98,6 +114,7 @@ input {
   display: flex;
   list-style: none;
   border: 0.1em solid black;
+  margin-bottom: 3em;
 }
 
 .topicBar li {

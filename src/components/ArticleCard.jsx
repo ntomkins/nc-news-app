@@ -6,9 +6,17 @@ const ArticleCard = props => {
   return (
     <li className='articleCard'>
       <div className='votes'>
-        <h4 className='voteArrow'>↑</h4>
+        <h4 className='voteArrow'>
+          <span role='img' aria-label='thumb up'>
+            👍
+          </span>
+        </h4>
         <h3>{article.votes}</h3>
-        <h4 className='voteArrow'>↓</h4>
+        <h4 className='voteArrow'>
+          <span role='img' aria-label='thumb down'>
+            👎
+          </span>
+        </h4>
       </div>
       <Link to={`/article/${article.article_id}`}>
         <div className='ArticleCardContent'>

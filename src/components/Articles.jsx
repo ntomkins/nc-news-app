@@ -14,12 +14,16 @@ class Articles extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps !== this.props || prevState !== this.state) {
+    if (
+      prevProps.author !== this.props.author ||
+      prevProps.topic !== this.props.topic ||
+      prevState.sort_by !== this.state.sort_by
+    ) {
       const { topic, author } = this.props;
       const { sort_by } = this.state;
-      fetchArticles({ topic, author }).then(articles =>
-        this.setState({ articles, sort_by })
-      );
+      fetchArticles({ topic, author, sort_by }).then(articles => {
+        this.setState({ articles, sort_by });
+      });
     }
   }
 
@@ -28,7 +32,6 @@ class Articles extends Component {
       <>
         <div className='sortBar'>
           <h3 onClick={() => this.changeSort('created_at')}>newest</h3>
-          {/* <h3 onClick={() => this.changeSort()}>top</h3> */}
           <h3 onClick={() => this.changeSort('votes')}>highest rated</h3>
           <h3 onClick={() => this.changeSort('comment_count')}>
             most comments
@@ -40,7 +43,7 @@ class Articles extends Component {
   }
 
   changeSort = sort_by => {
-    console.log(sort_by);
+    // console.log(sort_by);
     this.setState({ sort_by });
   };
 }

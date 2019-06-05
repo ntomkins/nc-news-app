@@ -91,7 +91,7 @@ input {
   align-content: flex-start;
   flex-direction: column;
   padding: 1em;
-  background-color: lightgray;
+  background-color: rgb(221, 132, 132);
 }
 
 .ArticleCardContent {

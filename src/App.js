@@ -4,7 +4,7 @@ import { Router } from '@reach/router';
 import Header from './components/Header';
 import LogInBox from './components/LogInBox';
 import Articles from './components/Articles';
-import SingleArticle from './components/SingleArticle';
+import ArticlePage from './components/ArticlePage';
 
 class App extends Component {
   state = { loggedInUser: null, loginPopup: false };
@@ -29,7 +29,7 @@ class App extends Component {
           <Articles path='/articles/*' />
           <Articles path='/articles/topics/:topic' />
           <Articles path='/articles/users/:username' />
-          <SingleArticle path='/article/:article_id' />
+          <ArticlePage path='/article/:article_id' />
         </Router>
       </div>
     );

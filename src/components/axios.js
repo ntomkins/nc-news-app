@@ -7,3 +7,10 @@ export const fetchArticles = params => {
     return articles;
   });
 };
+
+export const fetchArticleById = article_id => {
+  const url = `${baseUrl}/api/articles/${article_id}`;
+  return axios.get(url).then(({ data: { article } }) => {
+    return article;
+  });
+};

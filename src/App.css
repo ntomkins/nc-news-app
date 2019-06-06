@@ -160,3 +160,13 @@ input {
   margin: 0 0.5em;
   border: 0.1em solid red;
 }
+
+.commentHeader {
+  display: flex;
+}
+
+.commentHeader h3,
+#deleteUser {
+  margin-bottom: 0em;
+  margin-right: 0.5em;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchCommentsbyArticleId } from './axios';
+import { fetchCommentsbyArticleId, deleteCommentByCommentId } from './axios';
 import CommentCard from './CommentCard';
 import SubmitCommentBox from './SubmitCommentBox';
 
@@ -30,7 +30,11 @@ class ArticleComments extends Component {
           loggedInUser={this.props.loggedInUser}
           article_id={article_id}
         />
-        <CommentCard comments={comments} />
+        <CommentCard
+          deleteComment={this.deleteComment}
+          comments={comments}
+          loggedInUser={this.props.loggedInUser}
+        />
       </>
     );
   }
@@ -41,6 +45,11 @@ class ArticleComments extends Component {
         comments: [comment, ...prevState.comments]
       };
     });
+  };
+
+  deleteComment = comment_id => {
+    console.log('delete comment ' + comment_id);
+    deleteCommentByCommentId(comment_id).then(console.log);
   };
 }
 

@@ -28,3 +28,10 @@ export const postCommentByArticleId = ({ article_id, username, body }) => {
     return comment;
   });
 };
+
+export const deleteCommentByCommentId = comment_id => {
+  const url = `${baseUrl}/api/comments/${comment_id}`;
+  return axios.delete(url).then(data => {
+    console.log(data);
+  });
+};

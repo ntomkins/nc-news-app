@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { postCommentByArticleId } from './axios';
 
 class SubmitCommentBox extends Component {
-  state = { commentInput: null, showCommentErr: false };
+  state = { commentInput: null, noCommentInputErr: false };
 
   componentDidMount() {}
 
@@ -27,7 +27,7 @@ class SubmitCommentBox extends Component {
           </label>
           <input type='submit' value='submit comment' />
         </form>
-        {this.state.showCommentErr && <h3>comment required</h3>}
+        {this.state.noCommentInputErr && <h3>comment required</h3>}
       </>
     );
   }
@@ -37,12 +37,12 @@ class SubmitCommentBox extends Component {
 
   handleSubmitError = e => {
     e.preventDefault();
-    this.setState({ showCommentErr: true });
+    this.setState({ noCommentInputErr: true });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({ showCommentErr: false });
+    this.setState({ noCommentInputErr: false });
     const { article_id } = this.props;
     const username = this.props.loggedInUser.username;
     const body = this.state.commentInput;

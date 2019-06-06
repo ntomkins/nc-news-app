@@ -86,14 +86,14 @@ input {
   border-radius: 0.5em;
 }
 
-.votes {
+.articleCardVotes {
   display: flex;
   align-content: flex-start;
   flex-direction: column;
   padding: 1em;
-  background-color: rgb(221, 132, 132);
+  background-color: rgb(240, 240, 240);
 }
-.votes h3 {
+.articleCardVotes h3 {
   margin: 0.3em auto;
 }
 
@@ -180,7 +180,7 @@ input {
 
 #thumbUpColor1 {
   color: transparent;
-  text-shadow: 0 0 0 rgb(223, 90, 73);
+  text-shadow: 0 0 0 rgb(15, 228, 43);
 }
 
 #thumbUpColor0,
@@ -188,10 +188,19 @@ input {
 #thumbDownColor0,
 #thumbDownColor1 {
   color: transparent;
-  text-shadow: 0 0 0 rgb(241, 196, 15);
+  text-shadow: 0 0 0 rgb(160, 160, 160);
 }
 
 #thumbDownColor-1 {
   color: transparent;
   text-shadow: 0 0 0 rgb(88, 87, 194);
+}
+
+.ArticlePageVotes {
+  display: flex;
+}
+
+.ArticlePageVotes h3,
+.ArticlePageVotes h4 {
+  margin: 1em;
 }

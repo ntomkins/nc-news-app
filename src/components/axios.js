@@ -44,3 +44,12 @@ export const voteOnComment = (voteChangeInput, comment_id) => {
       return comment;
     });
 };
+
+export const voteOnArticle = (voteChangeInput, article_id) => {
+  const url = `${baseUrl}/api/articles/${article_id}`;
+  return axios
+    .patch(url, { inc_votes: voteChangeInput })
+    .then(({ data: { article } }) => {
+      return article;
+    });
+};

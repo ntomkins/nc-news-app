@@ -4,25 +4,25 @@ import { voteOnComment } from './axios';
 class commentCard extends Component {
   state = { voteChange: 0 };
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log(this.state.voteChange);
-    if (prevState.voteChange !== this.state.voteChange) {
-    }
-  }
-
   render() {
     const { comment } = this.props;
     return (
       <li key={comment.comment_id} className='commentCard'>
         <div className='commentVotes'>
-          <h4 className='voteArrow' onClick={() => this.handleVote(1)}>
+          <h4
+            className='voteArrow'
+            id={`thumbUpColor${this.state.voteChange}`}
+            onClick={() => this.handleVote(1)}
+          >
             <span role='img' aria-label='thumb up'>
               👍
             </span>
           </h4>
           <h3>{comment.votes + this.state.voteChange}</h3>
-
-          <h4 className='voteArrow'>
+          <h4
+            className='voteArrow'
+            id={`thumbDownColor${this.state.voteChange}`}
+          >
             <span
               role='img'
               aria-label='thumb down'

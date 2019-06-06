@@ -37,7 +37,6 @@ export const deleteCommentByCommentId = comment_id => {
 };
 
 export const voteOnComment = (voteChangeInput, comment_id) => {
-  console.log('voting');
   const url = `${baseUrl}/api/comments/${comment_id}`;
   return axios
     .patch(url, { inc_votes: voteChangeInput })

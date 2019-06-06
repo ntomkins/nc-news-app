@@ -177,3 +177,21 @@ input {
   margin-bottom: 0em;
   margin-right: 0.5em;
 }
+
+#thumbUpColor1 {
+  color: transparent;
+  text-shadow: 0 0 0 rgb(223, 90, 73);
+}
+
+#thumbUpColor0,
+#thumbUpColor-1,
+#thumbDownColor0,
+#thumbDownColor1 {
+  color: transparent;
+  text-shadow: 0 0 0 rgb(241, 196, 15);
+}
+
+#thumbDownColor-1 {
+  color: transparent;
+  text-shadow: 0 0 0 rgb(88, 87, 194);
+}

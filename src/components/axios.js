@@ -31,7 +31,7 @@ export const postCommentByArticleId = ({ article_id, username, body }) => {
 
 export const deleteCommentByCommentId = comment_id => {
   const url = `${baseUrl}/api/comments/${comment_id}`;
-  return axios.delete(url).then(data => {
-    console.log(data);
+  return axios.delete(url).then(({ status }) => {
+    return status;
   });
 };

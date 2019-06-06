@@ -48,8 +48,11 @@ class ArticleComments extends Component {
   };
 
   deleteComment = comment_id => {
-    console.log('delete comment ' + comment_id);
-    deleteCommentByCommentId(comment_id).then(console.log);
+    deleteCommentByCommentId(comment_id).then(status => {
+      fetchCommentsbyArticleId(this.props.article_id).then(comments => {
+        this.setState({ comments });
+      });
+    });
   };
 }
 

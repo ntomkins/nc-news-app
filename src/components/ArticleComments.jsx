@@ -38,7 +38,7 @@ class ArticleComments extends Component {
   updateComments = comment => {
     this.setState(prevState => {
       return {
-        comments: [...prevState.comments, comment]
+        comments: [comment, ...prevState.comments]
       };
     });
   };

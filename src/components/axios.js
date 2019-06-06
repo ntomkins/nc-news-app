@@ -21,3 +21,12 @@ export const fetchCommentsbyArticleId = article_id => {
     return comments;
   });
 };
+
+export const postCommentByArticleId = article_id => {
+  const url = `${baseUrl}/api/articles/${article_id}/comments`;
+  return axios
+    .post(url, { username: 'jessjelly', body: 'this is a test' })
+    .then(({ data: { comments } }) => {
+      return comments;
+    });
+};

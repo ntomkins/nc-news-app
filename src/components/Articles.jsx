@@ -43,7 +43,6 @@ class Articles extends Component {
   }
 
   changeSort = sort_by => {
-    // console.log(sort_by);
     this.setState({ sort_by });
   };
 }

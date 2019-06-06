@@ -20,7 +20,10 @@ class ArticlePage extends Component {
           <>
             <ArticleContent article={article} />
             <h2 id='ArticleCommentsHeader'>Comments</h2>
-            <ArticleComments article_id={article.article_id} />
+            <ArticleComments
+              loggedInUser={this.props.loggedInUser}
+              article_id={article.article_id}
+            />
           </>
         )}
       </>

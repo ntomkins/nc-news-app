@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fetchCommentsbyArticleId } from './axios';
 import CommentCard from './CommentCard';
+import SubmitCommentBox from './SubmitCommentBox';
 
 class ArticleComments extends Component {
   state = { comments: [] };
@@ -13,8 +14,13 @@ class ArticleComments extends Component {
 
   render() {
     const { comments } = this.state;
+    const { article_id } = this.props;
     return (
       <>
+        <SubmitCommentBox
+          loggedInUser={this.props.loggedInUser}
+          article_id={article_id}
+        />
         <CommentCard comments={comments} />
       </>
     );

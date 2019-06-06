@@ -29,7 +29,10 @@ class App extends Component {
           <Articles path='/articles/*' />
           <Articles path='/articles/topics/:topic' />
           <Articles path='/articles/users/:username' />
-          <ArticlePage path='/article/:article_id' />
+          <ArticlePage
+            loggedInUser={this.state.loggedInUser}
+            path='/article/:article_id'
+          />
         </Router>
       </div>
     );

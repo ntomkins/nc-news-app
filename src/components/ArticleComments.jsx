@@ -12,12 +12,21 @@ class ArticleComments extends Component {
     });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.comments.length !== this.state.comments.length) {
+      fetchCommentsbyArticleId(this.props.article_id).then(comments => {
+        this.setState({ comments });
+      });
+    }
+  }
+
   render() {
     const { comments } = this.state;
     const { article_id } = this.props;
     return (
       <>
         <SubmitCommentBox
+          updateComments={this.updateComments}
           loggedInUser={this.props.loggedInUser}
           article_id={article_id}
         />
@@ -25,6 +34,14 @@ class ArticleComments extends Component {
       </>
     );
   }
+
+  updateComments = comment => {
+    this.setState(prevState => {
+      return {
+        comments: [...prevState.comments, comment]
+      };
+    });
+  };
 }
 
 export default ArticleComments;

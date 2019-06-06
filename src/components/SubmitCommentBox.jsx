@@ -30,14 +30,15 @@ class SubmitCommentBox extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { article_id } = this.props;
-    const username = this.props.loggedInUser;
+    const username = this.props.loggedInUser.username;
     const body = this.state.commentInput;
-    console.log(article_id, username, body);
-
-    postCommentByArticleId().then(
-      comment => {}
-      //   console.log(comment)
-    );
+    postCommentByArticleId({
+      article_id,
+      username,
+      body
+    }).then(comment => {
+      this.props.updateComments(comment);
+    });
   };
 }
 

@@ -93,6 +93,9 @@ input {
   padding: 1em;
   background-color: rgb(221, 132, 132);
 }
+.votes h3 {
+  margin: 0.3em auto;
+}
 
 .ArticleCardContent {
   display: flex;
@@ -144,6 +147,10 @@ input {
   align-content: flex-start;
   flex-direction: column;
   padding: 1em;
+}
+
+.commentVotes h3 {
+  margin: 0.3em auto;
 }
 
 .voteArrow {

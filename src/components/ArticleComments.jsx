@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fetchCommentsbyArticleId, deleteCommentByCommentId } from './axios';
-import CommentCard from './CommentCard';
+import CommentList from './CommentList';
 import SubmitCommentBox from './SubmitCommentBox';
 
 class ArticleComments extends Component {
@@ -30,7 +30,7 @@ class ArticleComments extends Component {
           loggedInUser={this.props.loggedInUser}
           article_id={article_id}
         />
-        <CommentCard
+        <CommentList
           deleteComment={this.deleteComment}
           comments={comments}
           loggedInUser={this.props.loggedInUser}

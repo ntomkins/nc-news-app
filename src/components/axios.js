@@ -35,3 +35,13 @@ export const deleteCommentByCommentId = comment_id => {
     return status;
   });
 };
+
+export const voteOnComment = (voteChangeInput, comment_id) => {
+  console.log('voting');
+  const url = `${baseUrl}/api/comments/${comment_id}`;
+  return axios
+    .patch(url, { inc_votes: voteChangeInput })
+    .then(({ data: { comment } }) => {
+      return comment;
+    });
+};

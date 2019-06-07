@@ -27,7 +27,6 @@ class Articles extends Component {
     if (prevProps.topic !== this.props.topic) {
       this.setState({ p: 1 });
     }
-
     if (
       prevProps.author !== this.props.author ||
       prevProps.topic !== this.props.topic ||
@@ -64,10 +63,11 @@ class Articles extends Component {
           </h3>
         </div>
         <ArticleList articles={this.state.articles} />
-        <div>
+        <div className='nextPrevArticlePage'>
           {this.state.p > 1 && (
             <h3 onClick={() => this.changePage(-1)}>prev</h3>
           )}
+          <h3>|</h3>
           {this.state.p < maxPage && (
             <h3 onClick={() => this.changePage(1)}>next</h3>
           )}

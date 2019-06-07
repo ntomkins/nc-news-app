@@ -13,18 +13,20 @@ class LogInBox extends Component {
           >
             x
           </h1>
-          <form onSubmit={this.handleSubmit} className='logInForm'>
-            <label>
-              Log In:
+          <div className='logInBoxContents'>
+            <form onSubmit={this.handleSubmit}>
+              <h2>Sign In</h2>
               <input
                 onChange={this.handleInput}
                 type='text'
                 name='username'
                 placeholder='Username'
+                id='logInUsernameEntry'
               />
-            </label>
-            <input type='submit' value='Log In' />
-          </form>
+
+              <input type='submit' value='Log In' id='logInSubmitButton' />
+            </form>
+          </div>
         </div>
       </div>
     );

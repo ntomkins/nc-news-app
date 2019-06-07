@@ -5,6 +5,7 @@ import Header from './components/Header';
 import LogInBox from './components/LogInBox';
 import Articles from './components/Articles';
 import ArticlePage from './components/ArticlePage';
+import Error from './components/Error';
 
 class App extends Component {
   state = { loggedInUser: null, loginPopup: false };
@@ -33,6 +34,7 @@ class App extends Component {
             loggedInUser={this.state.loggedInUser}
             path='/article/:article_id'
           />
+          <Error default />
         </Router>
       </div>
     );

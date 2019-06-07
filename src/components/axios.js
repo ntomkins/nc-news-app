@@ -53,3 +53,10 @@ export const voteOnArticle = (voteChangeInput, article_id) => {
       return article;
     });
 };
+
+export const fetchUsername = username => {
+  const url = `${baseUrl}/api/users/${username}`;
+  return axios.get(url).then(({ data: { user } }) => {
+    return user;
+  });
+};

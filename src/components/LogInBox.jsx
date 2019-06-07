@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { fetchUsername } from './axios';
 
 class LogInBox extends Component {
-  state = { usernameInput: '' };
+  state = { usernameInput: '', err: null };
+
   render() {
     return (
       <div className='greyBackground'>
@@ -24,8 +25,12 @@ class LogInBox extends Component {
                 placeholder='Username'
                 id='logInUsernameEntry'
               />
-
-              <input type='submit' value='Log In' id='logInSubmitButton' />
+              <div className='logInButton'>
+                <input type='submit' value='Log In' id='logInSubmitButton' />
+                {this.state.err && this.state.err.status === 404 && (
+                  <h4 id='userNotFound'>username not found</h4>
+                )}
+              </div>
             </form>
           </div>
         </div>
@@ -38,17 +43,18 @@ class LogInBox extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.getUsernames(e).then(username =>
-      this.props.updateLoggedInUser(username)
-    );
-  };
-
-  getUsernames = e => {
-    const baseUrl = 'https://ntomkins-nc-news-app.herokuapp.com';
-    const url = baseUrl + '/api/users/' + this.state.usernameInput;
-    return axios.get(url).then(({ data: { user } }) => {
-      return user;
-    });
+    fetchUsername(this.state.usernameInput)
+      .then(user => {
+        this.props.updateLoggedInUser(user);
+      })
+      .catch(({ response }) => {
+        const { msg } = response.data;
+        const { status } = response;
+        const err = { msg, status };
+        this.setState({
+          err
+        });
+      });
   };
 }
 

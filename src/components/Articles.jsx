@@ -4,7 +4,7 @@ import ArticleList from './ArticleList';
 import Error from './Error';
 
 class Articles extends Component {
-  state = { articles: [], sortby: null };
+  state = { articles: [], sortby: null, err: null };
 
   componentDidMount() {
     const { topic, author } = this.props;

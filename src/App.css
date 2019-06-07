@@ -2,6 +2,10 @@ li {
   list-style: none;
 }
 
+ul {
+  padding-left: 0em;
+}
+
 .header {
   display: flex;
   flex-wrap: wrap;
@@ -202,7 +206,7 @@ li {
   margin: 0em;
 }
 
-.votearrow span:hover {
+.voteArrow span:hover {
   cursor: pointer;
 }
 
@@ -247,6 +251,16 @@ li {
   text-shadow: 0 0 0 rgb(88, 87, 194);
 }
 
+#thumbUpColor0:hover {
+  color: transparent;
+  text-shadow: 0 0 0 rgb(15, 228, 43);
+}
+
+#thumbDownColor0:hover {
+  color: transparent;
+  text-shadow: 0 0 0 rgb(88, 87, 194);
+}
+
 .ArticlePageVotes {
   display: flex;
 }
@@ -254,4 +268,9 @@ li {
 .ArticlePageVotes h3,
 .ArticlePageVotes h4 {
   margin: 1em;
+}
+
+.errorMsg {
+  text-align: center;
+  font-size: 2.5em;
 }

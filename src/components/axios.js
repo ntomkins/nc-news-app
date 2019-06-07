@@ -3,9 +3,11 @@ const baseUrl = 'https://ntomkins-nc-news-app.herokuapp.com';
 
 export const fetchArticles = params => {
   const url = `${baseUrl}/api/articles/`;
-  return axios.get(url, { params }).then(({ data: { articles } }) => {
-    return articles;
-  });
+  return axios
+    .get(url, { params })
+    .then(({ data: { articles }, data: { total_count } }) => {
+      return { articles, total_count };
+    });
 };
 
 export const fetchArticleById = article_id => {

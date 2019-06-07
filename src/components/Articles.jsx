@@ -24,6 +24,10 @@ class Articles extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    if (prevProps.topic !== this.props.topic) {
+      this.setState({ p: 1 });
+    }
+
     if (
       prevProps.author !== this.props.author ||
       prevProps.topic !== this.props.topic ||

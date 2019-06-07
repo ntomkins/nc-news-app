@@ -20,6 +20,7 @@ class SubmitCommentBox extends Component {
             Add Comment:
             <input
               onChange={this.handleInput}
+              required={true}
               type='text'
               name='comment'
               placeholder='comment here'

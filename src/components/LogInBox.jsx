@@ -18,6 +18,7 @@ class LogInBox extends Component {
               <h2>Sign In</h2>
               <input
                 onChange={this.handleInput}
+                required={true}
                 type='text'
                 name='username'
                 placeholder='Username'

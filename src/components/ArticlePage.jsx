@@ -16,7 +16,6 @@ class ArticlePage extends Component {
         const { msg } = response.data;
         const { status } = response;
         const err = { msg, status };
-        console.dir(err);
         this.setState({
           err
         });

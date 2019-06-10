@@ -20,7 +20,7 @@ const Header = props => {
         <div>
           {props.loggedInUser ? (
             <div className='userHeaderBox'>
-              <Link to={`/articles/users/${props.loggedInUser.username}`}>
+              <Link to={`/users/${props.loggedInUser.username}`}>
                 <img src={props.loggedInUser.avatar_url} alt='user avatar' />
               </Link>
               <h2
@@ -42,8 +42,8 @@ const Header = props => {
         </div>
       </div>
       <Router primary={false}>
-        <TopicBar path='/articles/topics/:topic' />
-        <TopicBar path='/articles/users/:author' />
+        <TopicBar path='/topics/:topic' />
+        <TopicBar path='/users/:author' />
         <TopicBar default />
       </Router>
     </>

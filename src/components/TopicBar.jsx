@@ -38,7 +38,7 @@ class TopicBar extends Component {
       <>
         <h1 className='topicBarTitle'>{title}</h1>
         <ul className='topicBar'>
-          <Link to={`/articles`} key={'news'}>
+          <Link to={`/`} key={'news'}>
             <li key='news'>news</li>
           </Link>
           {topics.map(topic => {

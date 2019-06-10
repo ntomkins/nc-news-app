@@ -43,7 +43,7 @@ class TopicBar extends Component {
           </Link>
           {topics.map(topic => {
             return (
-              <Link to={`/articles/topics/${topic.slug}`} key={topic.slug}>
+              <Link to={`/topics/${topic.slug}`} key={topic.slug}>
                 <li key={topic.slug}>{topic.slug}</li>
               </Link>
             );

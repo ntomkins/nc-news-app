@@ -7,8 +7,12 @@ const Header = props => {
     <>
       <div className='header'>
         <div className='headerMain'>
-          <h2>logo here</h2>
-          <h2>current topic</h2>
+          <img
+            src='https://cdn-images-1.medium.com/max/1200/1*LdnSztHVYhhd8K8EqlgCJQ.png'
+            alt='northcoders logo'
+            height='100'
+            width='100'
+          />
         </div>
         <h1>
           <span style={{ color: 'red' }}>N</span>C NEWS

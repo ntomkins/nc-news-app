@@ -171,11 +171,12 @@ ul {
 }
 
 .topicBar {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
   font-size: 1.5em;
   display: flex;
-  /* padding: 1em 0; */
-  background-color: rgb(182, 48, 25);
+  background-color: #c51431;
   margin-bottom: 3em;
 }
 
@@ -192,7 +193,7 @@ ul {
 
 .topicBarTitle {
   color: white;
-  background-color: rgb(182, 48, 25);
+  background-color: #c51431;
   padding-left: 1em;
   padding-top: 1em;
   margin-bottom: 0;

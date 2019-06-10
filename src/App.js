@@ -35,9 +35,9 @@ class App extends Component {
           )}
         </div>
         <Router primary={false}>
-          <Articles path='/articles/' />
-          <Articles path='/articles/topics/:topic' />
-          <Articles path='/articles/users/:author' />
+          <Articles path='/' />
+          <Articles path='/topics/:topic' />
+          <Articles path='/users/:author' />
           <ArticlePage
             loggedInUser={this.state.loggedInUser}
             path='/article/:article_id'

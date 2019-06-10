@@ -11,7 +11,7 @@ class Articles extends Component {
     const { sort_by, p } = this.state;
     fetchArticles({ topic, author, p, sort_by })
       .then(({ articles, total_count }) =>
-        this.setState({ articles, total_count })
+        this.setState({ articles, total_count, err: null })
       )
       .catch(({ response }) => {
         const { msg } = response.data;
@@ -37,7 +37,7 @@ class Articles extends Component {
       const { sort_by, p } = this.state;
       fetchArticles({ topic, author, sort_by, p })
         .then(({ articles, total_count }) =>
-          this.setState({ articles, total_count })
+          this.setState({ articles, total_count, err: null })
         )
         .catch(({ response }) => {
           const { msg } = response.data;

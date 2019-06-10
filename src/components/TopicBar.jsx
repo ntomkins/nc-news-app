@@ -26,20 +26,30 @@ class TopicBar extends Component {
 
   render() {
     if (this.state.err) return <Error err={this.state.err} />;
+    let title = 'NEWS';
+    if (this.props.topic) {
+      title = this.props.topic.toUpperCase();
+    }
+    if (this.props.author) {
+      title = this.props.author.toUpperCase() + "'S ARTICLES";
+    }
     const { topics } = this.state;
     return (
-      <ul className='topicBar'>
-        <Link to={`/articles`} key={'news'}>
-          <li key='news'>news</li>
-        </Link>
-        {topics.map(topic => {
-          return (
-            <Link to={`/articles/topics/${topic.slug}`} key={topic.slug}>
-              <li key={topic.slug}>{topic.slug}</li>
-            </Link>
-          );
-        })}
-      </ul>
+      <>
+        <h1 className='topicBarTitle'>{title}</h1>
+        <ul className='topicBar'>
+          <Link to={`/articles`} key={'news'}>
+            <li key='news'>news</li>
+          </Link>
+          {topics.map(topic => {
+            return (
+              <Link to={`/articles/topics/${topic.slug}`} key={topic.slug}>
+                <li key={topic.slug}>{topic.slug}</li>
+              </Link>
+            );
+          })}
+        </ul>
+      </>
     );
   }
 }

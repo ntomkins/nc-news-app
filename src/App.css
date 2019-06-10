@@ -190,10 +190,12 @@ ul {
   border-bottom: 0.3em solid black;
 }
 
-.topicBar :hover {
-  /* border-bottom: 0.5em solid black; */
-
-  /* background-color: rgb(211, 63, 36); */
+.topicBarTitle {
+  color: white;
+  background-color: rgb(182, 48, 25);
+  padding-left: 1em;
+  padding-top: 1em;
+  margin-bottom: 0;
 }
 
 #ArticleCommentsHeader {

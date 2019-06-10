@@ -1,6 +1,6 @@
 import React from 'react';
 import TopicBar from './TopicBar';
-import { Link } from '@reach/router';
+import { Router, Link } from '@reach/router';
 
 const Header = props => {
   return (
@@ -37,7 +37,11 @@ const Header = props => {
           )}
         </div>
       </div>
-      <TopicBar />
+      <Router primary={false}>
+        <TopicBar path='/articles/topics/:topic' />
+        <TopicBar path='/articles/users/:author' />
+        <TopicBar default />
+      </Router>
     </>
   );
 };

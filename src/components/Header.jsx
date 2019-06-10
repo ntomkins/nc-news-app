@@ -1,5 +1,6 @@
 import React from 'react';
 import TopicBar from './TopicBar';
+import { Link } from '@reach/router';
 
 const Header = props => {
   return (
@@ -15,7 +16,9 @@ const Header = props => {
         <div>
           {props.loggedInUser ? (
             <div className='userHeaderBox'>
-              <img src={props.loggedInUser.avatar_url} alt='user avatar' />
+              <Link to={`/articles/users/${props.loggedInUser.username}`}>
+                <img src={props.loggedInUser.avatar_url} alt='user avatar' />
+              </Link>
               <h2
                 onClick={e => props.updateLoggedInUser(null)}
                 className='logInOutButton'

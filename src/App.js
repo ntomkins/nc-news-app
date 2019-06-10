@@ -37,7 +37,7 @@ class App extends Component {
         <Router primary={false}>
           <Articles path='/articles/' />
           <Articles path='/articles/topics/:topic' />
-          <Articles path='/articles/users/:username' />
+          <Articles path='/articles/users/:author' />
           <ArticlePage
             loggedInUser={this.state.loggedInUser}
             path='/article/:article_id'

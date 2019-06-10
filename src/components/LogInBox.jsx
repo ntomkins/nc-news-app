@@ -37,6 +37,7 @@ class LogInBox extends Component {
       </div>
     );
   }
+
   handleInput = e => {
     this.setState({ usernameInput: e.target.value });
   };

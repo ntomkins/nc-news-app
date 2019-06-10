@@ -68,11 +68,11 @@ class ArticleComments extends Component {
   };
 
   deleteComment = comment_id => {
-    deleteCommentByCommentId(comment_id).then(status => {
-      fetchCommentsbyArticleId(this.props.article_id).then(comments => {
-        this.setState({ comments });
-      });
-    });
+    deleteCommentByCommentId(comment_id).then(console.log);
+    const remainingComments = this.state.comments.filter(
+      comment => comment.comment_id !== comment_id
+    );
+    this.setState({ comments: remainingComments });
   };
 }
 

@@ -10,6 +10,14 @@ import Error from './components/Error';
 class App extends Component {
   state = { loggedInUser: null, loginPopup: false };
 
+  componentDidMount() {
+    if (localStorage.getItem('user')) {
+      const userString = localStorage.getItem('user');
+      const user = JSON.parse(userString);
+      this.setState({ loggedInUser: user });
+    }
+  }
+
   render() {
     return (
       <div className='App'>
@@ -45,6 +53,8 @@ class App extends Component {
 
   updateLoggedInUser = user => {
     this.setState({ loggedInUser: user, loginPopup: false });
+    const parsedUser = JSON.stringify(user, null, 2);
+    localStorage.setItem('user', parsedUser);
   };
 }
 

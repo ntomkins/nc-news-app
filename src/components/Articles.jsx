@@ -11,7 +11,7 @@ class Articles extends Component {
     const { sort_by, p } = this.state;
     fetchArticles({ topic, author, p, sort_by })
       .then(({ articles, total_count }) =>
-        this.setState({ articles, total_count, err: null })
+        this.setState({ articles, total_count })
       )
       .catch(({ response }) => {
         const { msg } = response.data;
@@ -24,7 +24,13 @@ class Articles extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.topic !== this.props.topic) {
+    if (
+      prevProps.author !== this.props.author ||
+      prevProps.topic !== this.props.topic
+    ) {
+      this.setState({ p: 1, sortby: null });
+    }
+    if (prevState.sort_by !== this.state.sort_by) {
       this.setState({ p: 1 });
     }
     if (

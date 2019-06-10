@@ -51,28 +51,19 @@ class commentCard extends Component {
       </li>
     );
   }
+
   handleVote = voteChangeInput => {
     const { comment_id } = this.props.comment;
     const { voteChange } = this.state;
     if (voteChange === 0) {
       voteOnComment(voteChangeInput, comment_id);
       this.setState({ voteChange: voteChangeInput });
-    } else if (voteChange === 1) {
-      if (voteChangeInput === 1) {
-        voteOnComment(-1, comment_id);
-        this.setState({ voteChange: 0 });
-      } else if (voteChangeInput === -1) {
-        voteOnComment(-2, comment_id);
-        this.setState({ voteChange: -1 });
-      }
-    } else if (voteChange === -1) {
-      if (voteChangeInput === 1) {
-        voteOnComment(2, comment_id);
-        this.setState({ voteChange: 1 });
-      } else if (voteChangeInput === -1) {
-        voteOnComment(1, comment_id);
-        this.setState({ voteChange: 0 });
-      }
+    } else if (voteChange === voteChangeInput) {
+      voteOnComment(-voteChangeInput, comment_id);
+      this.setState({ voteChange: 0 });
+    } else if (voteChange !== voteChangeInput) {
+      voteOnComment(-2 * voteChangeInput, comment_id);
+      this.setState({ voteChange: voteChangeInput });
     }
   };
 }

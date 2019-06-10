@@ -53,22 +53,12 @@ class ArticleCard extends Component {
     if (voteChange === 0) {
       voteOnArticle(voteChangeInput, article_id);
       this.setState({ voteChange: voteChangeInput });
-    } else if (voteChange === 1) {
-      if (voteChangeInput === 1) {
-        voteOnArticle(-1, article_id);
-        this.setState({ voteChange: 0 });
-      } else if (voteChangeInput === -1) {
-        voteOnArticle(-2, article_id);
-        this.setState({ voteChange: -1 });
-      }
-    } else if (voteChange === -1) {
-      if (voteChangeInput === 1) {
-        voteOnArticle(2, article_id);
-        this.setState({ voteChange: 1 });
-      } else if (voteChangeInput === -1) {
-        voteOnArticle(1, article_id);
-        this.setState({ voteChange: 0 });
-      }
+    } else if (voteChange === voteChangeInput) {
+      voteOnArticle(-voteChangeInput, article_id);
+      this.setState({ voteChange: 0 });
+    } else if (voteChange !== voteChangeInput) {
+      voteOnArticle(-2 * voteChangeInput, article_id);
+      this.setState({ voteChange: voteChangeInput });
     }
   };
 }

@@ -10,6 +10,13 @@ export const fetchArticles = params => {
     });
 };
 
+export const fetchTopics = params => {
+  const url = baseUrl + '/api/topics/';
+  return axios.get(url).then(({ data: { topics } }) => {
+    return topics;
+  });
+};
+
 export const fetchArticleById = article_id => {
   const url = `${baseUrl}/api/articles/${article_id}`;
   return axios.get(url).then(({ data: { article } }) => {

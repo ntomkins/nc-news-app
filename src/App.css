@@ -174,7 +174,7 @@ ul {
   margin: 0 auto;
   font-size: 1.5em;
   display: flex;
-  padding: 1em 0;
+  /* padding: 1em 0; */
   background-color: rgb(182, 48, 25);
   margin-bottom: 3em;
 }
@@ -182,12 +182,18 @@ ul {
 .topicBar a {
   color: white;
   text-decoration: none;
-  border-right: 0.1em solid rgb(194, 144, 136);
   padding: 1em;
 }
 
+.topicBar a:hover {
+  padding-bottom: 0.2em;
+  border-bottom: 0.3em solid black;
+}
+
 .topicBar :hover {
-  background-color: rgb(211, 63, 36);
+  /* border-bottom: 0.5em solid black; */
+
+  /* background-color: rgb(211, 63, 36); */
 }
 
 #ArticleCommentsHeader {

@@ -5,14 +5,8 @@ class ArticleContent extends Component {
   state = { voteChange: 0 };
 
   render() {
-    const {
-      title,
-      author,
-      topic,
-      body,
-      votes,
-      created_at
-    } = this.props.article;
+    const { title, author, body, votes, created_at } = this.props.article;
+    const { voteChange } = this.state;
     return (
       <>
         <div className='articleContents'>
@@ -23,18 +17,15 @@ class ArticleContent extends Component {
           <div className='ArticlePageVotes'>
             <h4
               className='voteArrow'
-              id={`thumbUpColor${this.state.voteChange}`}
+              id={`thumbUpColor${voteChange}`}
               onClick={() => this.handleVote(1)}
             >
               <span role='img' aria-label='thumb up'>
                 👍
               </span>
             </h4>
-            <h3>{votes + this.state.voteChange}</h3>
-            <h4
-              className='voteArrow'
-              id={`thumbDownColor${this.state.voteChange}`}
-            >
+            <h3>{votes + voteChange}</h3>
+            <h4 className='voteArrow' id={`thumbDownColor${voteChange}`}>
               <span
                 role='img'
                 aria-label='thumb down'

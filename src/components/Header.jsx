@@ -3,6 +3,7 @@ import TopicBar from './TopicBar';
 import { Router, Link } from '@reach/router';
 
 const Header = props => {
+  const { loggedInUser } = props;
   return (
     <>
       <div className='header'>
@@ -18,10 +19,10 @@ const Header = props => {
           <span style={{ color: 'red' }}>N</span>C NEWS
         </h1>
         <div>
-          {props.loggedInUser ? (
+          {loggedInUser ? (
             <div className='userHeaderBox'>
-              <Link to={`/users/${props.loggedInUser.username}`}>
-                <img src={props.loggedInUser.avatar_url} alt='user avatar' />
+              <Link to={`/users/${loggedInUser.username}`}>
+                <img src={loggedInUser.avatar_url} alt='user avatar' />
               </Link>
               <h2
                 onClick={e => props.updateLoggedInUser(null)}

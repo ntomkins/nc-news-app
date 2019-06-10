@@ -51,8 +51,9 @@ class Articles extends Component {
   }
 
   render() {
-    if (this.state.err) return <Error err={this.state.err} />;
-    const maxPage = Math.ceil(this.state.total_count / 10);
+    const { total_count, err, articles, p } = this.state;
+    if (err) return <Error err={err} />;
+    const maxPage = Math.ceil(total_count / 10);
     return (
       <>
         <div className='sortBar'>
@@ -62,15 +63,11 @@ class Articles extends Component {
             most comments
           </h3>
         </div>
-        <ArticleList articles={this.state.articles} />
+        <ArticleList articles={articles} />
         <div className='nextPrevArticlePage'>
-          {this.state.p > 1 && (
-            <h3 onClick={() => this.changePage(-1)}>prev</h3>
-          )}
+          {p > 1 && <h3 onClick={() => this.changePage(-1)}>prev</h3>}
           <h3>|</h3>
-          {this.state.p < maxPage && (
-            <h3 onClick={() => this.changePage(1)}>next</h3>
-          )}
+          {p < maxPage && <h3 onClick={() => this.changePage(1)}>next</h3>}
         </div>
       </>
     );

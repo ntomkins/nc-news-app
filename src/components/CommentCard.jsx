@@ -5,24 +5,22 @@ class commentCard extends Component {
   state = { voteChange: 0 };
 
   render() {
-    const { comment } = this.props;
+    const { comment, loggedInUser } = this.props;
+    const { voteChange } = this.state;
     return (
       <li key={comment.comment_id} className='commentCard'>
         <div className='commentVotes'>
           <h4
             className='voteArrow'
-            id={`thumbUpColor${this.state.voteChange}`}
+            id={`thumbUpColor${voteChange}`}
             onClick={() => this.handleVote(1)}
           >
             <span role='img' aria-label='thumb up'>
               👍
             </span>
           </h4>
-          <h3>{comment.votes + this.state.voteChange}</h3>
-          <h4
-            className='voteArrow'
-            id={`thumbDownColor${this.state.voteChange}`}
-          >
+          <h3>{comment.votes + voteChange}</h3>
+          <h4 className='voteArrow' id={`thumbDownColor${voteChange}`}>
             <span
               role='img'
               aria-label='thumb down'
@@ -35,15 +33,14 @@ class commentCard extends Component {
         <div className='commentCardContent'>
           <div className='commentHeader'>
             <h3>{comment.author}</h3>
-            {this.props.loggedInUser &&
-              this.props.loggedInUser.username === comment.author && (
-                <h4
-                  onClick={() => this.props.deleteComment(comment.comment_id)}
-                  id='deleteUser'
-                >
-                  [delete]
-                </h4>
-              )}
+            {loggedInUser && loggedInUser.username === comment.author && (
+              <h4
+                onClick={() => this.props.deleteComment(comment.comment_id)}
+                id='deleteUser'
+              >
+                [delete]
+              </h4>
+            )}
           </div>
           <h5>{comment.created_at}</h5>
           <p>{comment.body}</p>

@@ -25,15 +25,16 @@ class TopicBar extends Component {
   }
 
   render() {
+    const { author, topic } = this.props;
+    const { topics } = this.state;
     if (this.state.err) return <Error err={this.state.err} />;
     let title = 'NEWS';
-    if (this.props.topic) {
-      title = this.props.topic.toUpperCase();
+    if (topic) {
+      title = topic.toUpperCase();
     }
-    if (this.props.author) {
-      title = this.props.author.toUpperCase() + "'S ARTICLES";
+    if (author) {
+      title = author.toUpperCase() + "'S ARTICLES";
     }
-    const { topics } = this.state;
     return (
       <>
         <h1 className='topicBarTitle'>{title}</h1>

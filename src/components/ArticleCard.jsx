@@ -7,24 +7,22 @@ class ArticleCard extends Component {
 
   render() {
     const { article } = this.props;
+    const { voteChange } = this.state;
 
     return (
       <li className='articleCard'>
         <div className='articleCardVotes'>
           <h4
             className='voteArrow'
-            id={`thumbUpColor${this.state.voteChange}`}
+            id={`thumbUpColor${voteChange}`}
             onClick={() => this.handleVote(1)}
           >
             <span role='img' aria-label='thumb up'>
               👍
             </span>
           </h4>
-          <h3>{article.votes + this.state.voteChange}</h3>
-          <h4
-            className='voteArrow'
-            id={`thumbDownColor${this.state.voteChange}`}
-          >
+          <h3>{article.votes + voteChange}</h3>
+          <h4 className='voteArrow' id={`thumbDownColor${voteChange}`}>
             <span
               role='img'
               aria-label='thumb down'
@@ -47,6 +45,7 @@ class ArticleCard extends Component {
       </li>
     );
   }
+
   handleVote = voteChangeInput => {
     const { article_id } = this.props.article;
     const { voteChange } = this.state;

@@ -6,6 +6,10 @@ ul {
   padding-left: 0em;
 }
 
+body {
+  margin: 0px;
+}
+
 .header {
   display: flex;
   flex-wrap: wrap;
@@ -86,11 +90,18 @@ ul {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding-bottom: 10%;
 }
 
 .logInBoxContents form h2 {
+  margin-top: 1em;
   margin-bottom: 1em;
+}
+
+.logInBoxContents form p {
+  position: absolute;
+  top: 0;
+  right: 1em;
+  font-size: 0.7em;
 }
 
 #logInUsernameEntry {
@@ -171,6 +182,7 @@ ul {
 }
 
 .topicBar {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;

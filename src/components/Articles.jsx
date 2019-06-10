@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchArticles } from './axios';
+import { fetchArticles } from '../axios';
 import ArticleList from './ArticleList';
 import Error from './Error';
 

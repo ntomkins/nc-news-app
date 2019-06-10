@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { voteOnArticle } from './axios';
+import { voteOnArticle } from '../axios';
 
 class ArticleContent extends Component {
   state = { voteChange: 0 };

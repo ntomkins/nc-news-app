@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { postCommentByArticleId } from './axios';
+import { postCommentByArticleId } from '../axios';
 
 class SubmitCommentBox extends Component {
   state = { commentInput: null, noCommentInputErr: false };

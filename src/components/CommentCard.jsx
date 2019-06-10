@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { voteOnComment } from './axios';
+import { voteOnComment } from '../axios';
 
 class commentCard extends Component {
   state = { voteChange: 0 };

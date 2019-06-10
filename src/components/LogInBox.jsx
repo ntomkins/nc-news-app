@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchUsername } from './axios';
+import { fetchUsername } from '../axios';
 
 class LogInBox extends Component {
   state = { usernameInput: '', err: null };
@@ -17,6 +17,7 @@ class LogInBox extends Component {
           <div className='logInBoxContents'>
             <form onSubmit={this.handleSubmit}>
               <h2>Sign In</h2>
+              <p>(you can log in as "guest")</p>
               <input
                 onChange={this.handleInput}
                 required={true}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { voteOnArticle } from './axios';
+import { voteOnArticle } from '../axios';
 import { Link } from '@reach/router';
 
 class ArticleCard extends Component {

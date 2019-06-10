@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchCommentsbyArticleId, deleteCommentByCommentId } from './axios';
+import { fetchCommentsbyArticleId, deleteCommentByCommentId } from '../axios';
 import CommentList from './CommentList';
 import SubmitCommentBox from './SubmitCommentBox';
 import Error from './Error';

@@ -22,7 +22,15 @@ const Header = props => {
           {loggedInUser ? (
             <div className='userHeaderBox'>
               <Link to={`/users/${loggedInUser.username}`}>
-                <img src={loggedInUser.avatar_url} alt='user avatar' />
+                <img
+                  src={loggedInUser.avatar_url}
+                  onError={e => {
+                    e.target.onerror = null;
+                    e.target.src =
+                      'https://www.hoursproject.com/images/cache/square_thumb/images/user/default.png';
+                  }}
+                  alt='user avatar'
+                />
               </Link>
               <h2
                 onClick={e => props.updateLoggedInUser(null)}

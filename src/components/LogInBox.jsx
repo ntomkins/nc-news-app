@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchUsername } from '../axios';
+import { fetchUser } from '../axios';
 
 class LogInBox extends Component {
   state = { usernameInput: '', err: null };
@@ -45,7 +45,7 @@ class LogInBox extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    fetchUsername(this.state.usernameInput)
+    fetchUser(this.state.usernameInput)
       .then(user => {
         this.props.updateLoggedInUser(user);
       })

@@ -6,15 +6,17 @@ import LogInBox from './components/LogInBox';
 import Articles from './components/Articles';
 import ArticlePage from './components/ArticlePage';
 import Error from './components/Error';
+import { fetchUser } from './axios';
 
 class App extends Component {
   state = { loggedInUser: null, loginPopup: false };
 
   componentDidMount() {
-    if (localStorage.getItem('user')) {
-      const userString = localStorage.getItem('user');
-      const user = JSON.parse(userString);
-      this.setState({ loggedInUser: user });
+    const username = localStorage.getItem('username');
+    if (username) {
+      fetchUser(username).then(user => {
+        this.setState({ loggedInUser: user });
+      });
     }
   }
 
@@ -52,9 +54,8 @@ class App extends Component {
   };
 
   updateLoggedInUser = user => {
+    localStorage.setItem('username', user && user.username);
     this.setState({ loggedInUser: user, loginPopup: false });
-    const parsedUser = JSON.stringify(user, null, 2);
-    localStorage.setItem('user', parsedUser);
   };
 }
 

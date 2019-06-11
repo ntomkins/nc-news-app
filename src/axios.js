@@ -52,7 +52,7 @@ export const patchVote = (voteChangeInput, from, id) => {
   });
 };
 
-export const fetchUsername = username => {
+export const fetchUser = username => {
   const url = `${baseUrl}/api/users/${username}`;
   return axios.get(url).then(({ data: { user } }) => {
     return user;

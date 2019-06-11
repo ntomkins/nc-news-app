@@ -45,22 +45,11 @@ export const deleteCommentByCommentId = comment_id => {
   });
 };
 
-export const voteOnComment = (voteChangeInput, comment_id) => {
-  const url = `${baseUrl}/api/comments/${comment_id}`;
-  return axios
-    .patch(url, { inc_votes: voteChangeInput })
-    .then(({ data: { comment } }) => {
-      return comment;
-    });
-};
-
-export const voteOnArticle = (voteChangeInput, article_id) => {
-  const url = `${baseUrl}/api/articles/${article_id}`;
-  return axios
-    .patch(url, { inc_votes: voteChangeInput })
-    .then(({ data: { article } }) => {
-      return article;
-    });
+export const patchVote = (voteChangeInput, from, id) => {
+  const url = `${baseUrl}/api/${from}/${id}`;
+  return axios.patch(url, { inc_votes: voteChangeInput }).then(({ data }) => {
+    return data;
+  });
 };
 
 export const fetchUsername = username => {

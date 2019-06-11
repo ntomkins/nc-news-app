@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { voteOnComment } from '../axios';
+import { patchVote } from '../axios';
 
 class commentCard extends Component {
   state = { voteChange: 0 };
@@ -53,13 +53,13 @@ class commentCard extends Component {
     const { comment_id } = this.props.comment;
     const { voteChange } = this.state;
     if (voteChange === 0) {
-      voteOnComment(voteChangeInput, comment_id);
+      patchVote(voteChangeInput, 'comments', comment_id);
       this.setState({ voteChange: voteChangeInput });
     } else if (voteChange === voteChangeInput) {
-      voteOnComment(-voteChangeInput, comment_id);
+      patchVote(-voteChangeInput, 'comments', comment_id);
       this.setState({ voteChange: 0 });
     } else if (voteChange !== voteChangeInput) {
-      voteOnComment(-2 * voteChangeInput, comment_id);
+      patchVote(-2 * voteChangeInput, 'comments', comment_id);
       this.setState({ voteChange: voteChangeInput });
     }
   };

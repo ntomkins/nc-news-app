@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { voteOnArticle } from '../axios';
+import { patchVote } from '../axios';
 import { Link } from '@reach/router';
 
 class ArticleCard extends Component {
@@ -50,13 +50,13 @@ class ArticleCard extends Component {
     const { article_id } = this.props.article;
     const { voteChange } = this.state;
     if (voteChange === 0) {
-      voteOnArticle(voteChangeInput, article_id);
+      patchVote(voteChangeInput, 'articles', article_id);
       this.setState({ voteChange: voteChangeInput });
     } else if (voteChange === voteChangeInput) {
-      voteOnArticle(-voteChangeInput, article_id);
+      patchVote(-voteChangeInput, 'articles', article_id);
       this.setState({ voteChange: 0 });
     } else if (voteChange !== voteChangeInput) {
-      voteOnArticle(-2 * voteChangeInput, article_id);
+      patchVote(-2 * voteChangeInput, 'articles', article_id);
       this.setState({ voteChange: voteChangeInput });
     }
   };

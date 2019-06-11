@@ -71,9 +71,20 @@ class Articles extends Component {
         </div>
         <ArticleList articles={articles} />
         <div className='nextPrevArticlePage'>
-          {p > 1 && <h3 onClick={() => this.changePage(-1)}>prev</h3>}
-          <h3>|</h3>
-          {p < maxPage && <h3 onClick={() => this.changePage(1)}>next</h3>}
+          {p > 1 && (
+            <h3
+              onClick={() => this.changePage(-1)}
+              className='changePageButton'
+            >
+              prev
+            </h3>
+          )}
+          <h3 className='changePageDivider'>|</h3>
+          {p < maxPage && (
+            <h3 onClick={() => this.changePage(1)} className='changePageButton'>
+              next
+            </h3>
+          )}
         </div>
       </>
     );

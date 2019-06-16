@@ -34,7 +34,7 @@ class TopicBar extends Component {
     }
     return (
       <>
-        <h1 className='topicBarTitle'>{title}</h1>
+        <h2 className='topicBarTitle'>{title}</h2>
         <ul className='topicBar'>
           <Link to={`/`} key={'news'}>
             <li key='news'>news</li>

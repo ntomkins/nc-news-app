@@ -8,7 +8,7 @@ ul {
 }
 
 body {
-  margin: 0px;
+  margin: 0;
 }
 
 .header {
@@ -21,8 +21,17 @@ body {
   margin: 0 auto;
 }
 
+.header img {
+  height: 3em;
+  width: 3em;
+}
+
+.header h1 {
+  margin: 0;
+}
+
 .userHeaderBox img {
-  margin: 1em;
+  /* margin: 1em; */
   height: 3em;
   width: 3em;
   border: 0.1em solid black;
@@ -34,9 +43,14 @@ body {
 
 .logInOutButton {
   display: flex;
+  align-self: center;
+  align-content: center;
   border: 0.1em solid #c51431;
   border-radius: 0.5em;
-  padding: 0.2em;
+  padding-top: 0.1em;
+  padding-bottom: 0.2em;
+  margin: 0 1em;
+  height: 1em;
 }
 
 .logInOutButton:hover {
@@ -210,9 +224,10 @@ body {
 }
 
 .topicBar a {
+  font-size: 0.8 em;
   color: white;
   text-decoration: none;
-  padding: 1em;
+  padding: 0.75em;
 }
 
 .topicBar a:hover {
@@ -225,11 +240,28 @@ body {
   background-color: #c51431;
   width: 80%;
   padding: 0 10%;
-  padding-top: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 0.2em;
   margin-bottom: 0;
 }
 
+.articleContents {
+  width: 80%;
+  padding: 0 10%;
+}
+
+.articleContents p {
+  font-size: 1.5em;
+}
+
+.articleComments {
+  width: 80%;
+  padding: 0 10%;
+}
+
 #ArticleCommentsHeader {
+  width: 80%;
+  padding: 0 10%;
   padding-top: 3em;
   padding-bottom: 1em;
 }
@@ -284,6 +316,11 @@ body {
 #deleteUser {
   margin-bottom: 0em;
   margin-right: 0.5em;
+}
+
+#deleteUser:hover {
+  cursor: pointer;
+  color: #c51431;
 }
 
 #thumbUpColor1 {

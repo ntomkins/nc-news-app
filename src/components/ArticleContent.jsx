@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { patchVote } from '../axios';
+import moment from 'moment';
+moment().format();
 
 class ArticleContent extends Component {
   state = { voteChange: 0 };
@@ -7,11 +9,13 @@ class ArticleContent extends Component {
   render() {
     const { title, author, body, votes, created_at } = this.props.article;
     const { voteChange } = this.state;
+    const timeAgo = moment(created_at).fromNow();
+
     return (
       <>
         <div className='articleContents'>
           <h4>
-            {author} / {created_at}
+            {author} / {timeAgo}
           </h4>
           <h1>{title}</h1>
           <div className='ArticlePageVotes'>

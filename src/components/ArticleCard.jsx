@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { patchVote } from '../axios';
 import { Link } from '@reach/router';
+import moment from 'moment';
+moment().format();
 
 class ArticleCard extends Component {
   state = { voteChange: 0 };
@@ -8,6 +10,7 @@ class ArticleCard extends Component {
   render() {
     const { article } = this.props;
     const { voteChange } = this.state;
+    const timeAgo = moment(article.created_at).fromNow();
 
     return (
       <li className='articleCard'>
@@ -37,8 +40,7 @@ class ArticleCard extends Component {
             <h2>{article.title}</h2>
             <h4>{article.author}</h4>
             <p>
-              {article.topic} date: {article.created_at} comments:{' '}
-              {article.comment_count}
+              {article.topic} date: {timeAgo} comments: {article.comment_count}
             </p>
           </div>
         </Link>

@@ -44,7 +44,7 @@ class ArticleComments extends Component {
     const { comments } = this.state;
     const { article_id } = this.props;
     return (
-      <>
+      <div className='articleComments'>
         <SubmitCommentBox
           updateComments={this.updateComments}
           loggedInUser={this.props.loggedInUser}
@@ -55,7 +55,7 @@ class ArticleComments extends Component {
           comments={comments}
           loggedInUser={this.props.loggedInUser}
         />
-      </>
+      </div>
     );
   }
 

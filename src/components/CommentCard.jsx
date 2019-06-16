@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { patchVote } from '../axios';
+import moment from 'moment';
+moment().format();
 
 class commentCard extends Component {
   state = { voteChange: 0 };
@@ -7,6 +9,7 @@ class commentCard extends Component {
   render() {
     const { comment, loggedInUser } = this.props;
     const { voteChange } = this.state;
+    const timeAgo = moment(comment.created_at).fromNow();
     return (
       <li key={comment.comment_id} className='commentCard'>
         <div className='commentVotes'>
@@ -42,7 +45,7 @@ class commentCard extends Component {
               </h4>
             )}
           </div>
-          <h5>{comment.created_at}</h5>
+          <h5>{timeAgo}</h5>
           <p>{comment.body}</p>
         </div>
       </li>

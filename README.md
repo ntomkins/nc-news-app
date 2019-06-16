@@ -4,7 +4,7 @@
 
 NC News is a news aggregation and discussion website based on news articles divided into topics, commenting and user voting. It is an app created using ReactJS, Reach Router, axios and CSS. The aim of the app is to be intuitive, reactive, responsive and provide an enjoyable user experience.
 
-To view the app please follow the instructions below, or alternatively a live version can be found [hosted on netlify](https://5cfe15a8ccb6ac30500208bb--ntomkins-nc-news.netlify.com).
+To view the app please follow the instructions below, or alternatively a live version can be found [hosted on netlify](https://ntomkins-nc-news-app.netlify.com/).
 
 ### Setting Up
 

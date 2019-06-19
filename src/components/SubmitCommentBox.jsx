@@ -52,6 +52,7 @@ class SubmitCommentBox extends Component {
     }).then(comment => {
       this.props.updateComments(comment);
     });
+    e.target.comment.value = '';
   };
 }
 

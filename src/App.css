@@ -163,6 +163,7 @@ body {
 }
 
 .articleCardVotes {
+  z-index: -1;
   display: flex;
   align-content: flex-start;
   flex-direction: column;

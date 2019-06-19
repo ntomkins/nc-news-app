@@ -17,7 +17,7 @@ class LogInBox extends Component {
           <div className='logInBoxContents'>
             <form onSubmit={this.handleSubmit}>
               <h2>Sign In</h2>
-              <p>(you can log in as "guest")</p>
+              <p>(you can log in as "jessjelly")</p>
               <input
                 onChange={this.handleInput}
                 required={true}

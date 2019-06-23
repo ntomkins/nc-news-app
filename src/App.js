@@ -20,18 +20,10 @@ class App extends Component {
     }
     if (this.state.isLoading) {
       checkServer().then(status => {
-        console.log(status, this.state.isLoading);
         if (status === 200) this.setState({ isLoading: false });
-        console.log(status, this.state.isLoading);
       });
     }
   }
-
-  // componentDidUpdate() {
-  //   if (this.state.isLoading) {
-  //     this.setState({ isLoading: false });
-  //   }
-  // }
 
   render() {
     return (

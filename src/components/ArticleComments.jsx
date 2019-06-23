@@ -23,7 +23,7 @@ class ArticleComments extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.comments.length !== this.state.comments.length) {
+    if (prevState.comments.length < this.state.comments.length) {
       fetchCommentsbyArticleId(this.props.article_id)
         .then(comments => {
           this.setState({ comments });
@@ -68,11 +68,14 @@ class ArticleComments extends Component {
   };
 
   deleteComment = comment_id => {
-    deleteCommentByCommentId(comment_id).then(console.log);
-    const remainingComments = this.state.comments.filter(
-      comment => comment.comment_id !== comment_id
-    );
-    this.setState({ comments: remainingComments });
+    deleteCommentByCommentId(comment_id);
+
+    this.setState(prevState => {
+      const remainingComments = prevState.comments.filter(
+        comment => comment.comment_id !== comment_id
+      );
+      return { comments: remainingComments };
+    });
   };
 }
 

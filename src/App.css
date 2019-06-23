@@ -11,6 +11,13 @@ body {
   margin: 0;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .header {
   display: flex;
   flex-wrap: wrap;
@@ -244,6 +251,7 @@ body {
   padding-top: 1em;
   padding-bottom: 0.2em;
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 .articleContents {
@@ -379,12 +387,11 @@ body {
     border-top: 0.1em solid black;
     margin: 0;
   }
-  .topicBar {
-    width: 100%;
-    padding: 0;
-  }
-
-  .topicBarTitle {
+  .topicBar,
+  .topicBarTitle,
+  .articleContents,
+  .articleCommentsHeader,
+  .articleComments {
     width: 100%;
     padding: 0;
   }

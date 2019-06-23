@@ -9,7 +9,7 @@ import Error from './components/Error';
 import { fetchUser } from './axios';
 
 class App extends Component {
-  state = { loggedInUser: null, loginPopup: false };
+  state = { loggedInUser: null, loginPopup: false, isLoading: true };
 
   componentDidMount() {
     const username = localStorage.getItem('username');
@@ -20,32 +20,44 @@ class App extends Component {
     }
   }
 
+  componentDidUpdate() {
+    if (this.state.isLoading) {
+      this.setState({ isLoading: false });
+    }
+  }
+
   render() {
     return (
-      <div className='App'>
-        <Header
-          loggedInUser={this.state.loggedInUser}
-          updateLoggedInUser={this.updateLoggedInUser}
-          toggleLoginPopup={this.toggleLoginPopup}
-        />
-        <div>
-          {this.state.loginPopup && (
-            <LogInBox
-              toggleLoginPopup={this.toggleLoginPopup}
+      <div>
+        {!this.state.isLoading ? (
+          <div className='App'>
+            <Header
+              loggedInUser={this.state.loggedInUser}
               updateLoggedInUser={this.updateLoggedInUser}
+              toggleLoginPopup={this.toggleLoginPopup}
             />
-          )}
-        </div>
-        <Router primary={false}>
-          <Articles path='/' />
-          <Articles path='/topics/:topic' />
-          <Articles path='/users/:author' />
-          <ArticlePage
-            loggedInUser={this.state.loggedInUser}
-            path='/article/:article_id'
-          />
-          <Error default />
-        </Router>
+            <div>
+              {this.state.loginPopup && (
+                <LogInBox
+                  toggleLoginPopup={this.toggleLoginPopup}
+                  updateLoggedInUser={this.updateLoggedInUser}
+                />
+              )}
+            </div>
+            <Router primary={false}>
+              <Articles path='/' />
+              <Articles path='/topics/:topic' />
+              <Articles path='/users/:author' />
+              <ArticlePage
+                loggedInUser={this.state.loggedInUser}
+                path='/article/:article_id'
+              />
+              <Error default />
+            </Router>
+          </div>
+        ) : (
+          <h1 className='loading'>Loading...</h1>
+        )}
       </div>
     );
   }

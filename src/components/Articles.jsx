@@ -14,8 +14,8 @@ class Articles extends Component {
         this.setState({ articles, total_count })
       )
       .catch(({ response }) => {
-        const { msg } = response.data;
-        const { status } = response;
+        const msg = response && response.data.msg;
+        const status = response && response.data.status;
         const err = { msg, status };
         this.setState({
           err
@@ -46,8 +46,8 @@ class Articles extends Component {
           this.setState({ articles, total_count, err: null })
         )
         .catch(({ response }) => {
-          const { msg } = response.data;
-          const { status } = response;
+          const msg = response && response.data.msg;
+          const status = response && response.data.status;
           const err = { msg, status };
           this.setState({
             err

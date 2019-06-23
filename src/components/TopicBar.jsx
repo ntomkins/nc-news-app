@@ -12,8 +12,8 @@ class TopicBar extends Component {
         this.setState({ topics });
       })
       .catch(({ response }) => {
-        const { msg } = response.data;
-        const { status } = response;
+        const msg = response && response.data.msg;
+        const status = response && response.data.status;
         const err = { msg, status };
         this.setState({
           err

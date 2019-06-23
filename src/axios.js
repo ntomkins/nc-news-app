@@ -1,6 +1,13 @@
 import axios from 'axios';
 const baseUrl = 'https://ntomkins-nc-news-app.herokuapp.com';
 
+export const checkServer = params => {
+  const url = `${baseUrl}/api`;
+  return axios.get(url).then(response => {
+    return response.status;
+  });
+};
+
 export const fetchArticles = params => {
   const url = `${baseUrl}/api/articles/`;
   return axios

@@ -6,7 +6,7 @@ import LogInBox from './components/LogInBox';
 import Articles from './components/Articles';
 import ArticlePage from './components/ArticlePage';
 import Error from './components/Error';
-import { fetchUser } from './axios';
+import { fetchUser, checkServer } from './axios';
 
 class App extends Component {
   state = { loggedInUser: null, loginPopup: false, isLoading: true };
@@ -18,13 +18,20 @@ class App extends Component {
         this.setState({ loggedInUser: user });
       });
     }
-  }
-
-  componentDidUpdate() {
     if (this.state.isLoading) {
-      this.setState({ isLoading: false });
+      checkServer().then(status => {
+        console.log(status, this.state.isLoading);
+        if (status === 200) this.setState({ isLoading: false });
+        console.log(status, this.state.isLoading);
+      });
     }
   }
+
+  // componentDidUpdate() {
+  //   if (this.state.isLoading) {
+  //     this.setState({ isLoading: false });
+  //   }
+  // }
 
   render() {
     return (

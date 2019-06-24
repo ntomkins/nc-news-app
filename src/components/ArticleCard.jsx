@@ -40,7 +40,7 @@ class ArticleCard extends Component {
             <h2>{article.title}</h2>
             <h4>{article.author}</h4>
             <p>
-              {article.topic} date: {timeAgo} comments: {article.comment_count}
+              {article.topic} / {timeAgo} / 💬{article.comment_count}
             </p>
           </div>
         </Link>

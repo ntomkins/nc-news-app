@@ -303,6 +303,8 @@ ul {
 }
 .commentButton {
   background-color: #57edc9;
+  padding: 0.4em;
+  border-radius: 0.1em;
 }
 
 .commentButton:hover {
@@ -445,10 +447,22 @@ ul {
     padding: 0;
   }
 
+  .articleContents {
+    margin-left: 0;
+  }
+
   .header h1 {
     position: absolute;
     color: transparent;
     z-index: -5;
+  }
+
+  .commentInput {
+    width: 100%;
+    border-top: 0.1em solid black;
+    border-bottom: 0.1em solid black;
+    border-left: none;
+    border-right: none;
   }
 
   .logInBox {

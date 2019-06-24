@@ -278,12 +278,35 @@ ul {
 }
 
 .articleContents {
+  border-bottom-color: #c51431;
+  border-bottom-style: double;
   width: 80%;
-  padding: 0 10%;
+  margin: 0 10%;
+  padding-bottom: 1em;
 }
 
 .articleContents p {
-  font-size: 1.5em;
+  font-size: 1.3em;
+}
+
+.commentBox {
+  margin: 2em 0;
+}
+
+.commentInput {
+  display: flex;
+  flex-direction: column;
+  width: 30em;
+  padding-bottom: 5em;
+  margin: 0.4em 0;
+  font-size: 1em;
+}
+.commentButton {
+  background-color: #57edc9;
+}
+
+.commentButton:hover {
+  cursor: pointer;
 }
 
 .articleComments {
@@ -294,8 +317,7 @@ ul {
 #ArticleCommentsHeader {
   width: 80%;
   padding: 0 10%;
-  padding-top: 3em;
-  padding-bottom: 1em;
+  margin-top: 3em;
 }
 
 .commentCard {

@@ -7,7 +7,7 @@ class SubmitCommentBox extends Component {
   render() {
     if (!this.props.loggedInUser) return <h3>log in to comment</h3>;
     return (
-      <>
+      <div className='commentBox'>
         <form
           onSubmit={
             this.state.commentInput ? this.handleSubmit : this.handleSubmitError
@@ -15,19 +15,20 @@ class SubmitCommentBox extends Component {
           className='submitComment'
         >
           <label>
-            Add Comment:
-            <input
-              onChange={this.handleInput}
-              required={true}
-              type='text'
-              name='comment'
-              placeholder='comment here'
-            />
+            <b>Share your thoughts...</b>
           </label>
-          <input type='submit' value='submit comment' />
+          <input
+            className='commentInput'
+            onChange={this.handleInput}
+            required={true}
+            type='text'
+            name='comment'
+            placeholder='comment here'
+          />
+          <input type='submit' value='submit' className='commentButton' />
         </form>
         {this.state.noCommentInputErr && <h3>comment required</h3>}
-      </>
+      </div>
     );
   }
   handleInput = e => {

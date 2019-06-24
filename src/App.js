@@ -55,7 +55,7 @@ class App extends Component {
             </Router>
           </div>
         ) : (
-          <h1 className='loading'>Loading...</h1>
+          <div className='loadingAnimation' />
         )}
       </div>
     );

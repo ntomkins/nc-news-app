@@ -11,11 +11,24 @@ body {
   margin: 0;
 }
 
-.loading {
+.loadingAnimation {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  margin: 15em auto;
+  border: 2em solid #cfcfcf;
+  border-top: 2em solid #c51431;
+  border-radius: 50%;
+  width: 12em;
+  height: 12em;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .header {
